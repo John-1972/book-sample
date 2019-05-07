@@ -34,28 +34,30 @@
       }
       #column1 {
         width: 23%; /* 25% of body, minus 1% margin on left & right */
-        min-width: 12.5em; /* Stops col 2 text over-writing col 1 as browser gets narrower */
         margin-top: 2em; /* Col 1 moved down, so its top edge is level with col 2 text  */
         background-color: lightgrey;
         border-radius: 0.5em;
       }
-      #column1 ul {
+      #column1 ul { /* List of page links */
         list-style-type: none; /* Remove the bullet points */
-        margin-bottom: 1.3em; /* Gap between link stack and e-mail form */
+        padding-left: 0.7em; /* Reduce large qty of padding where bullet points were */
+        margin-bottom: 1.3em; /* Increase gap between page links & e-mail form */
       }
       #column1 li {
-        margin: 0.6em; /* Need some spacing between each of the links */
+        margin: 0.6em; /* Increase spacing between each of the links */
       }
       #column1 a { color: darkred; } /* Book link color matches navbar */
       #column1 form {
-        width: 95%; /* Always keep fieldset smaller than column */
-        margin: 0.6em auto 0.5em auto; /* Set gaps between fieldset & column edge */
+        width: 90%; /* Keep form narrower than column */
+        margin: 0 auto 0.7em auto; /* Center the form & extend length of column below it */
       }
-      #column1 fieldset { border-radius: 0.4em; } /* Rounded corners to match col 1 */
-      #column1 p { margin-top: 0.5em; } /* Reduce gap between fieldset label & inner text */
+      #column1 #form-title {
+        font-weight: bold;
+        text-align: center;
+      }
       #column1 #button {
-        float: right; /* Move submit button to RHS of form */
-        margin-top: 1em; /* Spacing between input field & submit button */
+        display: block; /* Turn inline element into block so button can be centered */
+        margin: 1em auto 0.5em auto; /* Center the button */
       }
 
       #column2 { width: 73%; } /* 75% of body, minus 1% margin on left & right */
@@ -91,12 +93,10 @@
         <li><a href="">Previous Titles</a></li>
       </ul>
       <form action="http://www.example.com/form.php" method="get">
-        <fieldset>
-          <legend>Stay up-to-date!</legend>
-          <p>If you'd like to be notified when new titles are released, you can join our mailing list...</p>
-          <label>E-mail: </label><input type="email" name="email"> <!-- HTML5 validation -->
-          <input type="submit" id="button" value="Subscribe" name="submit">
-        </fieldset>
+        <span id="form-title"><p>Stay up-to-date!</p></span>
+        <p>If you'd like to be notified when new titles are released, you can join our mailing list...</p>
+        <label>E-mail: </label><input type="email" name="email"> <!-- HTML5 validation -->
+        <input type="submit" id="button" value="Subscribe" name="submit">
       </form>
     </div> <!-- id="column1" -->
 
